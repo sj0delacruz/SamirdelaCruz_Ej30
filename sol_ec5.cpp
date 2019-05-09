@@ -11,14 +11,14 @@ int main(){
     int l_max=1, t_max=2;
     float dx=0.01,dt=0.01;
     int num_x=l_max/dx+1,num_t=t_max/dt+1;
-    float epsilon=0.1,beta=epsilon*dt/dx;
+    float epsilon=1,beta=epsilon*dt/dx;
     
     /*
     condiciones iniciales
     */
     double u[2][num_x];
     for(int i=0;i<num_x;i++){
-        u[0][i]=sin(4*M_PI*i*dx)/2;
+        u[0][i]=sin(4*M_PI*i*dx)/20;
     }
 
     /*

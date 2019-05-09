@@ -9,13 +9,14 @@ num_x=dat.shape[1]
 num_t=dat.shape[0]
 
 xdata, ydata = np.linspace(0,1,num_x), []
+
 fig, ax = plt.subplots()
+
 ax.grid()
 ln, = plt.plot(xdata, dat[0])
-
 def init():  # only required for blitting to give a clean slate.
     ax.set_xlim(0, 1)
-    ax.set_ylim(-0.5, 0.5)
+    ax.set_ylim(-0.05, 0.05)
     ax.set_xlabel("Posicion [metros]")
     ax.set_ylabel("U")
     return ln,
@@ -29,7 +30,6 @@ def animate(i):
 
 ani = animation.FuncAnimation(
     fig, animate, init_func=init, interval=100,frames=range(num_t), blit=True,repeat=True)
-
 # To save the animation, use e.g.
 #
 ani.save("sol_ec5.gif",fps=10)
